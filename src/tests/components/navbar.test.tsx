@@ -17,6 +17,17 @@ describe('O componente de Navbar', () => {
         expect(logo.src).toContain('logo.svg')
     })
 
+    test('Quando clicar na logo', () => {
+        render(<Navbar />)
+
+        const logo = document.querySelector("img") as HTMLImageElement
+
+        fireEvent.click(logo)
+        
+        expect(mockNavegacao).toHaveBeenCalledTimes(1)
+        expect(mockNavegacao).toHaveBeenCalledWith('/')
+    })
+
     test('Quando clicar na Pagina inicial', () => {
         render(<Navbar />)
 

@@ -22,7 +22,7 @@ export const Navbar = () => {
 
   return (
     <nav className={styles.nav}>
-      <img src='/images/logo.svg' className={styles.logo} alt='Logo TratoTech'/>
+      <img src='/images/logo.svg' className={styles.logo} alt='Logo TratoTech' onClick={() => handleNavigate('/')}/>
       <div className={styles.links}>
         <div>
           <button  
