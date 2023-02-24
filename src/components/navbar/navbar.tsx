@@ -7,6 +7,7 @@ import {
 } from 'react-icons/ri'
 
 import { useNavigate } from 'react-router-dom'
+import Search from 'components/search/search'
 
 const iconeProps = {
   color: '#FFF',
@@ -35,7 +36,7 @@ export const Navbar = () => {
         </div>
       </div>
       <div className={styles.busca}>
-
+        <Search/>
       </div>
       <div className={styles.icones}>
         <button onClick={() => handleNavigate('/carrinho')} aria-label='carrinho'>

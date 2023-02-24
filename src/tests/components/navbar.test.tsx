@@ -49,5 +49,13 @@ describe('O componente de Navbar', () => {
         expect(mockNavegacao).toHaveBeenCalledTimes(1)
         expect(mockNavegacao).toHaveBeenCalledWith('/carrinho')
     })
+
+    test('O componente de Busca esta no documento', () => {
+        render(<Navbar />)
+
+        const input = screen.getByPlaceholderText('O que você procura?') as HTMLInputElement
+
+        expect(input).toBeTruthy()
+    })
 })
 
