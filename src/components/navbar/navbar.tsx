@@ -1,6 +1,6 @@
 import styles from './navbar.module.scss'
 import classNames from 'classnames'
-
+import { IconProps } from '../../constants/constants'
 import {
   RiShoppingCart2Line,
   RiShoppingCart2Fill
@@ -8,11 +8,7 @@ import {
 
 import { useNavigate } from 'react-router-dom'
 import Search from 'components/search/search'
-
-const iconeProps = {
-  color: '#FFF',
-  size: 24
-}
+import Logo from '../../assets/logo.svg'
 
 export const Navbar = () => {
   const navigate = useNavigate()
@@ -23,7 +19,7 @@ export const Navbar = () => {
 
   return (
     <nav className={styles.nav}>
-      <img src='/images/logo.svg' className={styles.logo} alt='Logo TratoTech' onClick={() => handleNavigate('/')}/>
+      <img src={Logo} className={styles.logo} alt='Logo TratoTech' onClick={() => handleNavigate('/')}/>
       <div className={styles.links}>
         <div>
           <button  
@@ -40,7 +36,7 @@ export const Navbar = () => {
       </div>
       <div className={styles.icones}>
         <button onClick={() => handleNavigate('/carrinho')} aria-label='carrinho'>
-          {window.location.pathname === '/carrinho' ? <RiShoppingCart2Fill {...iconeProps}/> : <RiShoppingCart2Line {...iconeProps} />}
+          {window.location.pathname === '/carrinho' ? <RiShoppingCart2Fill {...IconProps}/> : <RiShoppingCart2Line {...IconProps} />}
         </button>
       </div>
     </nav>
