@@ -7,7 +7,6 @@ export default function Search() {
           className={styles.input} 
           type="text" 
           placeholder='O que você procura?'
-          role='input'
         />
     </div>
   )

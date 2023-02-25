@@ -5,7 +5,9 @@ exports[`O componente Footer Quando o componente renderiza 1`] = `
   <footer
     class="footer"
   >
-    <div>
+    <div
+      role="feed"
+    >
       <svg
         color="#FFF"
         fill="currentColor"
@@ -52,9 +54,7 @@ exports[`O componente Footer Quando o componente renderiza 1`] = `
         />
       </svg>
     </div>
-    <span
-      role="span"
-    >
+    <span>
       Desenvolvido por Neto Domingos!
     </span>
   </footer>

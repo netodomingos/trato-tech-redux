@@ -8,14 +8,14 @@ import {
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
-        <div>
+    <footer className={styles.footer} >
+        <div role='feed'>
             <FaFacebook {...IconProps}/>
             <FaTwitter {...IconProps}/>
             <FaInstagram {...IconProps}/>
         </div>
-        <span role="span">
-            Desenvolvido por Neto Domingos!
+        <span>
+          Desenvolvido por Neto Domingos!
         </span>
     </footer>
   )
