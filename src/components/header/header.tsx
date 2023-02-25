@@ -9,10 +9,9 @@ export default function Header({ title, description, className = '', image }: He
         <h2 aria-label='description'>{description}</h2>
       </div>
       <div className={styles['header-imagem']}>
-        <img
-          alt={title}
-          src={image}
-        />
+        {
+          image !== '' && <img alt={title} src={image} />
+        }
       </div>
     </header>
   )
