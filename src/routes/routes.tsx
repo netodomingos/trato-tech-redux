@@ -1,9 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Home from 'pages/home/home'
-// import Carrinho from 'pages/cart/cart'
-
 import Container from 'components/container/container'
+import Categories from 'pages/categories/categories'
 
 export default function index() {
   return (
@@ -11,6 +10,7 @@ export default function index() {
       <Routes>
         <Route path='/' element={<Container/>}>
           <Route index element={<Home/>}/>
+          <Route path='/categorias/:nomeCategoria' element={<Categories/>}/>
         </Route>
       </Routes>
   	</BrowserRouter>

@@ -34,9 +34,9 @@ const initialState: Array<Categorys> = [{
 }];
 
 const categorysSlice = createSlice({
-    name: 'category',
-    initialState,
-    reducers: {}
+  name: 'category',
+  initialState,
+  reducers: {}
 })
 
 export default categorysSlice.reducer
