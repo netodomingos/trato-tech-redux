@@ -6,9 +6,10 @@ import {
   RiShoppingCart2Fill
 } from 'react-icons/ri'
 
-import { useNavigate } from 'react-router-dom'
 import Search from 'components/search/search'
 import Logo from '../../assets/logo.svg'
+
+import { useNavigate } from 'hooks/useNavigate'
 
 export const Navbar = () => {
   const navigate = useNavigate()
