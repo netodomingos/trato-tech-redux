@@ -6,3 +6,11 @@ export interface Categorys {
     id: string,
     descricao: string,
 }
+
+export interface CategoryComponent {
+    titulo: string,
+    descricao: string,
+    foto: string,
+    favorito: boolean,
+    preco: number,
+}

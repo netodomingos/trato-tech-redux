@@ -1,10 +1,7 @@
 import styles from './navbar.module.scss'
 import classNames from 'classnames'
 import { IconProps } from '../../constants/constants'
-import {
-  RiShoppingCart2Line,
-  RiShoppingCart2Fill
-} from 'react-icons/ri'
+import { RiShoppingCart2Line, RiShoppingCart2Fill } from '../../constants/icons'
 
 import Search from 'components/search/search'
 import Logo from '../../assets/logo.svg'

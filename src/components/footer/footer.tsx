@@ -4,7 +4,7 @@ import {
     FaFacebook,
     FaTwitter,
     FaInstagram
-} from 'react-icons/fa'
+} from '../../constants/icons'
 
 export default function Footer() {
   return (
