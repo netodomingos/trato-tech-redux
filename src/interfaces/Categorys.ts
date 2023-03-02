@@ -13,4 +13,5 @@ export interface CategoryComponent {
     foto: string,
     favorito: boolean,
     preco: number,
+    id: string
 }

@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Itens } from 'interfaces/Itens'
 
 import assistenteVirtual from 'assets/itens/assistente-virtual.png';
@@ -234,7 +234,18 @@ const initialState: Array<Itens> =[{
 const itensSlice = createSlice({
   name: 'itens',
   initialState,
-  reducers: {}
+  reducers: {
+    changeFavourite: (state: Array<Itens>, { payload }: PayloadAction<string>) => {
+      state = state.filter((item: Itens) => { 
+        if(item.id === payload){
+          item.favorito = !item.favorito
+          return item
+        }
+      })
+    }
+  }
 })
+
+export const { changeFavourite } = itensSlice.actions
 
 export default itensSlice.reducer

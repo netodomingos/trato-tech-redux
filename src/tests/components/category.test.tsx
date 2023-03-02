@@ -1,7 +1,10 @@
-import { getByText, render, screen } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import Category from "components/category/category"
 
 import assistenteVirtual from 'assets/itens/assistente-virtual.png';
+import { Provider } from "react-redux";
+import store from "store/store";
+
 const MockCategory = {
     titulo: 'Teste titulo',
     descricao: 'teste descricao',
@@ -15,13 +18,16 @@ const MockCategory = {
 describe('O componente Category', () => {
     test('Quando o componente renderiza', () => {
         const { container } = render( 
-            <Category 
-                titulo={MockCategory.titulo} 
-                descricao={MockCategory.descricao} 
-                favorito={MockCategory.favorito} 
-                foto={MockCategory.foto}
-                preco={MockCategory.preco}
-            />
+            <Provider store={store}>
+                <Category 
+                    id={MockCategory.id}
+                    titulo={MockCategory.titulo} 
+                    descricao={MockCategory.descricao} 
+                    favorito={MockCategory.favorito} 
+                    foto={MockCategory.foto}
+                    preco={MockCategory.preco}
+                />
+            </Provider>
         )
 
         expect(container).toMatchSnapshot()
@@ -29,13 +35,16 @@ describe('O componente Category', () => {
 
     test('Quando o componente renderiza com o titulo', () => {
         render( 
-            <Category 
-                titulo={MockCategory.titulo} 
-                descricao={MockCategory.descricao} 
-                favorito={MockCategory.favorito} 
-                foto={MockCategory.foto}
-                preco={MockCategory.preco}
-            />
+            <Provider store={store}>
+                <Category 
+                    id={MockCategory.id}
+                    titulo={MockCategory.titulo} 
+                    descricao={MockCategory.descricao} 
+                    favorito={MockCategory.favorito} 
+                    foto={MockCategory.foto}
+                    preco={MockCategory.preco}
+                />
+            </Provider>
         )
 
         const titulo = screen.getByText('Teste titulo')
@@ -45,13 +54,16 @@ describe('O componente Category', () => {
 
     test('Quando o componente renderiza com a descricao', () => {
         render( 
-            <Category 
-                titulo={MockCategory.titulo} 
-                descricao={MockCategory.descricao} 
-                favorito={MockCategory.favorito} 
-                foto={MockCategory.foto}
-                preco={MockCategory.preco}
-            />
+            <Provider store={store}>
+                <Category 
+                    id={MockCategory.id}
+                    titulo={MockCategory.titulo} 
+                    descricao={MockCategory.descricao} 
+                    favorito={MockCategory.favorito} 
+                    foto={MockCategory.foto}
+                    preco={MockCategory.preco}
+                />
+            </Provider>
         )
 
         const descricao = screen.getByText('teste descricao')
@@ -61,13 +73,16 @@ describe('O componente Category', () => {
 
     test('Quando o componente renderiza a imagem', () => {
         render( 
-            <Category 
-                titulo={MockCategory.titulo} 
-                descricao={MockCategory.descricao} 
-                favorito={MockCategory.favorito} 
-                foto={MockCategory.foto}
-                preco={MockCategory.preco}
-            />
+            <Provider store={store}>
+                <Category 
+                    id={MockCategory.id}
+                    titulo={MockCategory.titulo} 
+                    descricao={MockCategory.descricao} 
+                    favorito={MockCategory.favorito} 
+                    foto={MockCategory.foto}
+                    preco={MockCategory.preco}
+                />
+            </Provider>
         )
 
         const logo = document.querySelector("img") as HTMLImageElement
@@ -77,13 +92,16 @@ describe('O componente Category', () => {
 
     test('Quando o componente renderiza a imagem', () => {
         render( 
-            <Category 
-                titulo={MockCategory.titulo} 
-                descricao={MockCategory.descricao} 
-                favorito={MockCategory.favorito} 
-                foto={MockCategory.foto}
-                preco={MockCategory.preco}
-            />
+            <Provider store={store}>
+                <Category 
+                    id={MockCategory.id}
+                    titulo={MockCategory.titulo} 
+                    descricao={MockCategory.descricao} 
+                    favorito={MockCategory.favorito} 
+                    foto={MockCategory.foto}
+                    preco={MockCategory.preco}
+                />
+            </Provider>
         )
 
         const preco = screen.getByText('R$ 1.00')

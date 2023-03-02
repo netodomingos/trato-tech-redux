@@ -25,7 +25,8 @@ export default function Categories() {
             <div className={styles.itens}>
               {itens?.map(item => (
                 <Category 
-                  key={item.id} 
+                  key={item.id}
+                  id={item.id} 
                   titulo={item.titulo} 
                   descricao={item.descricao} 
                   favorito={item.favorito} 

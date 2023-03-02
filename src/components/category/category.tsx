@@ -2,8 +2,15 @@ import { CategoryComponent } from 'interfaces/Categorys'
 import styles from './category.module.scss'
 import { IconPropsItem } from '../../constants/constants'
 import { AiFillHeart, AiOutlineHeart, FaCartPlus } from '../../constants/icons'
+import { changeFavourite } from 'store/reducers/itens'
+import { useDispatch } from 'react-redux'
 
-export default function Category({ titulo, foto, preco, descricao, favorito }: CategoryComponent) {
+export default function Category({ titulo, foto, preco, descricao, favorito, id }: CategoryComponent) {
+	const dispatch = useDispatch()
+	const favourite = () => {
+		dispatch(changeFavourite(id))
+	}
+
   return (
     <div className={styles.item}>
         <div className={styles['item-imagem']}>
@@ -21,8 +28,8 @@ export default function Category({ titulo, foto, preco, descricao, favorito }: C
                 <div className={styles['item-acoes']}>
                     {
                         favorito 
-                        ? <AiFillHeart {...IconPropsItem} color='#ff0000' className={styles['item-acao']} />
-                        : <AiOutlineHeart {...IconPropsItem} className={styles['item-acao']}/>
+                        ? <AiFillHeart {...IconPropsItem} color='#ff0000' className={styles['item-acao']} onClick={favourite}/>
+                        : <AiOutlineHeart {...IconPropsItem} className={styles['item-acao']} onClick={favourite}/>
                     }
 
                     <FaCartPlus 
