@@ -3,12 +3,20 @@ import styles from './category.module.scss'
 import { IconPropsItem } from '../../constants/constants'
 import { AiFillHeart, AiOutlineHeart, FaCartPlus } from '../../constants/icons'
 import { changeFavourite } from 'store/reducers/itens'
-import { useDispatch } from 'react-redux'
+import { addInCart } from 'store/reducers/cart'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootStore } from 'interfaces/RootStore'
 
 export default function Category({ titulo, foto, preco, descricao, favorito, id }: CategoryComponent) {
 	const dispatch = useDispatch()
+    const inCart = useSelector((state: RootStore) => state.cart.some(item => item.id === id))
+
 	const favourite = () => {
 		dispatch(changeFavourite(id))
+	}
+
+    const add = () => {
+		dispatch(addInCart(id))
 	}
 
   return (
@@ -34,8 +42,9 @@ export default function Category({ titulo, foto, preco, descricao, favorito, id 
 
                     <FaCartPlus 
                         {...IconPropsItem}
-                        color={true ? '#1875E8' : IconPropsItem.color}
+                        color={inCart ? '#1875E8' : IconPropsItem.color}
                         className={styles['item-acao']}
+                        onClick={add}
                     />
                 </div>
             </div>

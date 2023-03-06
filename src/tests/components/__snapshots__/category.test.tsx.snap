@@ -56,12 +56,12 @@ exports[`O componente Category Quando o componente renderiza 1`] = `
           </svg>
           <svg
             class="item-acao"
-            color="#1875E8"
+            color="#041833"
             fill="currentColor"
             height="24"
             stroke="currentColor"
             stroke-width="0"
-            style="color: rgb(24, 117, 232);"
+            style="color: rgb(4, 24, 51);"
             viewBox="0 0 576 512"
             width="24"
             xmlns="http://www.w3.org/2000/svg"
