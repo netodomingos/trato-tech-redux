@@ -6,10 +6,11 @@ import { changeFavourite } from 'store/reducers/itens'
 import { addInCart } from 'store/reducers/cart'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootStore } from 'interfaces/RootStore'
+import classNames from 'classnames'
 
-export default function Category({ titulo, foto, preco, descricao, favorito, id }: CategoryComponent) {
+export default function Category({ titulo, foto, preco, descricao, favorito, id, inCart }: CategoryComponent) {
 	const dispatch = useDispatch()
-    const inCart = useSelector((state: RootStore) => state.cart.some(item => item.id === id))
+    const inCartReducer = useSelector((state: RootStore) => state.cart.some(item => item.id === id))
 
 	const favourite = () => {
 		dispatch(changeFavourite(id))
@@ -20,7 +21,9 @@ export default function Category({ titulo, foto, preco, descricao, favorito, id 
 	}
 
   return (
-    <div className={styles.item}>
+    <div className={classNames(styles.item, {
+        [styles.itemNoCarrinho]: inCart
+    })}>
         <div className={styles['item-imagem']}>
             <img src={foto} alt={titulo} />
         </div>
@@ -42,7 +45,7 @@ export default function Category({ titulo, foto, preco, descricao, favorito, id 
 
                     <FaCartPlus 
                         {...IconPropsItem}
-                        color={inCart ? '#1875E8' : IconPropsItem.color}
+                        color={inCartReducer ? '#1875E8' : IconPropsItem.color}
                         className={styles['item-acao']}
                         onClick={add}
                     />
