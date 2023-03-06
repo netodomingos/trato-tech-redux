@@ -7,7 +7,7 @@ import Category from 'components/category/category'
 
 export default function Carrinho() {
   const cart = useGetCart()
-	const total = useGetTotal()	
+  const total = useGetTotal()	
 
   return (
     <div>

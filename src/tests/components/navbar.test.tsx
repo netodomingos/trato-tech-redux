@@ -1,5 +1,7 @@
 import { Navbar } from '../../components/navbar/navbar'
 import { render, screen, fireEvent } from '@testing-library/react'
+import { Provider } from 'react-redux'
+import store from 'store/store'
 
 const mockNavegacao = jest.fn()
 jest.mock('react-router-dom', () => {
@@ -10,7 +12,9 @@ jest.mock('react-router-dom', () => {
 
 describe('O componente de Navbar', () => {
     test('Quando a Logo for renderizada', () => {
-        render(<Navbar />)
+        render(<Provider store={store}>
+            <Navbar />
+        </Provider>)
 
         const logo = document.querySelector("img") as HTMLImageElement
         
@@ -18,7 +22,9 @@ describe('O componente de Navbar', () => {
     })
 
     test('Quando clicar na logo', () => {
-        render(<Navbar />)
+        render(<Provider store={store}>
+            <Navbar />
+        </Provider>)
 
         const logo = document.querySelector("img") as HTMLImageElement
 
@@ -29,7 +35,9 @@ describe('O componente de Navbar', () => {
     })
 
     test('Quando clicar na Pagina inicial', () => {
-        render(<Navbar />)
+        render(<Provider store={store}>
+            <Navbar />
+        </Provider>)
 
         const paginaInicial = screen.getByText('Página inicial')
 
@@ -40,7 +48,9 @@ describe('O componente de Navbar', () => {
     })
 
     test('Quando clicar no carrinho', () => {
-        render(<Navbar />)
+        render(<Provider store={store}>
+                    <Navbar />
+                </Provider>)
 
         const carrinho = screen.getByLabelText('carrinho')
 
@@ -51,7 +61,9 @@ describe('O componente de Navbar', () => {
     })
 
     test('O componente de Busca esta no documento', () => {
-        render(<Navbar />)
+        render(<Provider store={store}>
+            <Navbar />
+        </Provider>)
 
         const input = screen.getByPlaceholderText('O que você procura?') as HTMLInputElement
 
