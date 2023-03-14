@@ -1,6 +1,8 @@
 import { 
     AiOutlineHeart,
-    AiFillHeart
+    AiFillHeart,
+    AiFillMinusCircle,
+    AiFillPlusCircle
 } from 'react-icons/ai'
 
 import {
@@ -23,5 +25,7 @@ export {
     FaFacebook,
     FaTwitter,
     FaInstagram,
-    FaCartPlus
+    FaCartPlus,
+    AiFillMinusCircle,
+    AiFillPlusCircle
 }
