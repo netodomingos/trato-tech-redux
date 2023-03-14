@@ -15,4 +15,5 @@ export interface CategoryComponent {
     preco: number,
     id: string,
     inCart?: boolean;
+    quantidade?: number
 }

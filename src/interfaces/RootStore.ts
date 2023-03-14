@@ -6,6 +6,7 @@ export interface RootStore {
     categorys: Array<Categorys>
     itens: Array<Itens>
     cart: Array<Cart>
+    search: string
 }
 
 export interface RootItensReducer {
