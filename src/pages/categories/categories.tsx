@@ -7,10 +7,14 @@ import styles from './categories.module.scss'
 
 export default function Categories() {
   const { nomeCategoria } = useParams()
-  const { categoria, itens } = useSelector((state: RootStore) => ({
-    categoria: state.categorys.find(categoria => categoria.id === nomeCategoria),
-    itens: state.itens.filter(item => item.categoria === nomeCategoria)
-  }))  
+  const { categoria, itens } = useSelector((state: RootStore) => {
+    const regexp = new RegExp(state.search, 'i')
+
+    return {
+      categoria: state.categorys.find(categoria => categoria.id === nomeCategoria),
+      itens: state.itens.filter(item => item.categoria === nomeCategoria && item.titulo.match(regexp))
+    }
+  })  
 
   return (
     <div>

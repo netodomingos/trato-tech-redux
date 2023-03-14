@@ -4,10 +4,14 @@ import relogio from '../../assets/inicial.png'
 import { useNavigate } from "hooks/useNavigate";
 import { useSelector } from "react-redux";
 import { RootStore } from "interfaces/RootStore";
+import { Categorys } from "interfaces/Categorys";
 
 export default function Home() {
   const navigate = useNavigate()
-  const categorias = useSelector((state: RootStore) => state.categorys)
+  const categorias: Array<Categorys> = useSelector((state: RootStore) => {
+    const regexp = new RegExp(state.search, 'i')
+    return state.categorys.filter(categoria => categoria.nome.match(regexp))
+  })
 
   const handleNavigate = (route: string) => {
     navigate(route)
