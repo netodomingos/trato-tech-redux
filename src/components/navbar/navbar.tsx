@@ -7,11 +7,11 @@ import Search from 'components/search/search'
 import Logo from '../../assets/logo.svg'
 
 import { useNavigate } from 'hooks/useNavigate'
-import { useGetCart } from 'hooks/useCart'
+import { useCartLength } from 'hooks/useCart'
 import Badge from '@mui/material/Badge'
 
 export const Navbar = () => {
-  const cart = useGetCart()
+  const counter = useCartLength()
   const navigate = useNavigate()
 
   const handleNavigate = (route: string) => {
@@ -37,7 +37,7 @@ export const Navbar = () => {
       </div>
       <div className={styles.icones}>
         <button onClick={() => handleNavigate('/carrinho')} aria-label='carrinho'>
-        <Badge badgeContent={cart.length} color="info" max={9}>
+        <Badge badgeContent={counter} color="info" max={9}>
           {window.location.pathname === '/carrinho' ? <RiShoppingCart2Fill {...IconProps}/> : <RiShoppingCart2Line {...IconProps} />}
         </Badge>
         </button>
