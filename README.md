@@ -1,5 +1,6 @@
 
 # Trato Tech (Ecommerce)
+[![tests](https://shields.io/badge/tests-100%25-green)](https://choosealicense.com/licenses/mit/)
 
 Uma breve descrição sobre o que esse projeto faz e para quem ele é
 
