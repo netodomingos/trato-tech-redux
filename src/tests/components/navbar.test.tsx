@@ -6,9 +6,11 @@ import store from 'store/store'
 const mockNavegacao = jest.fn()
 jest.mock('react-router-dom', () => {
     return {
-        useNavigate: () => mockNavegacao
+        useNavigate: () => mockNavegacao,
+        useLocation: () => mockNavegacao
     }
 })
+
 
 describe('O componente de Navbar', () => {
     test('Quando a Logo for renderizada', () => {

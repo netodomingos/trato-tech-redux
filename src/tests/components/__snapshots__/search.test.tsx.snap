@@ -9,6 +9,7 @@ exports[`O componente Search Quando o componente renderiza 1`] = `
       class="input"
       placeholder="O que você procura?"
       type="text"
+      value=""
     />
   </div>
 </div>
